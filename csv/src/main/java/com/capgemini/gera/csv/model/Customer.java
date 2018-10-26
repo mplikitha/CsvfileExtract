@@ -32,18 +32,33 @@ private String email;
 @CsvBindByName
 private String phoneNo;
 
-public Customer(long id, String firstName, String middleName, String lastName, String email, String phoneNo) {
+@CsvBindByName
+private String gender;
+
+
+@CsvBindByName
+private String information;
+
+@CsvBindByName
+private String dob;
+
+
+public Customer() {
 	
+}
+
+public Customer(long id, String firstName, String middleName, String lastName, String email, String phoneNo,
+		String gender, String information, String dob) {
+	super();
 	this.id = id;
 	this.firstName = firstName;
 	this.middleName = middleName;
 	this.lastName = lastName;
 	this.email = email;
 	this.phoneNo = phoneNo;
-}
-
-public Customer() {
-	
+	this.gender = gender;
+	this.information = information;
+	this.dob = dob;
 }
 
 public long getId() {
@@ -94,11 +109,39 @@ public void setPhoneNo(String phoneNo) {
 	this.phoneNo = phoneNo;
 }
 
+
+public String getGender() {
+	return gender;
+}
+
+public void setGender(String gender) {
+	this.gender = gender;
+}
+
+public String getInformation() {
+	return information;
+}
+
+public void setInformation(String information) {
+	this.information = information;
+}
+
+public String getDob() {
+	return dob;
+}
+
+public void setDob(String dob) {
+	this.dob = dob;
+}
+
 @Override
 public String toString() {
 	return "Customer [id=" + id + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName
-			+ ", email=" + email + ", phoneNo=" + phoneNo + "]";
+			+ ", email=" + email + ", phoneNo=" + phoneNo + ", gender=" + gender + ", information=" + information
+			+ ", dob=" + dob + "]";
 }
+
+
 
 
 }
